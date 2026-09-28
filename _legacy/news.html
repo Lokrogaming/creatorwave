@@ -1,0 +1,75 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>News & Community · Creator Wave</title><link rel="icon" href="assets/logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{wave:{cyan:'#64dbe9'}},fontFamily:{display:['Space Grotesk','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"><script src="assets/js/main.js" defer></script>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col">
+<div class="fixed inset-0 -z-10 overflow-hidden"><div class="blob absolute -top-20 left-1/4 w-[500px] h-[400px] rounded-full bg-cyan-500/20"></div><div class="blob absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet-500/20"></div></div>
+<header class="sticky top-3 z-50 mx-3 sm:mx-6"><div class="glass rounded-2xl max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+<a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl ring-1 ring-white/20" alt=""><span class="font-display font-bold">CREATOR <span class="text-cyan-300">WAVE</span><small class="block text-[9px] tracking-[.25em] text-slate-400">MINECRAFT COMMUNITY</small></span></a>
+<nav class="hidden lg:flex gap-6 mx-auto text-sm text-slate-300"><a href="index.html" class="hover:text-cyan-300">Start</a><a data-nav href="news.html" class="hover:text-cyan-300 font-bold">News</a><a href="regeln.html" class="hover:text-cyan-300">Regeln</a><a href="faq.html" class="hover:text-cyan-300">FAQ & Commands</a><a href="support.html" class="hover:text-cyan-300">Support</a><a href="appeal.html" class="hover:text-cyan-300">Entbannung</a></nav>
+<div class="ml-auto lg:ml-0 flex gap-2"><button data-open="newPostDialog" class="text-xs font-bold rounded-xl bg-cyan-400 text-[#06222b] px-4 py-2.5 hover:brightness-110">+ Beitrag</button><button id="navToggle" class="lg:hidden w-10 h-10 grid place-items-center rounded-xl border border-white/15 bg-white/5">☰</button></div></div>
+<div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 glass rounded-2xl p-4 grid gap-1 text-sm"><a href="index.html" class="px-3 py-2 rounded-xl hover:bg-white/10">Start</a><a href="news.html" class="px-3 py-2 rounded-xl bg-white/10 font-bold">News</a><a href="regeln.html" class="px-3 py-2 rounded-xl hover:bg-white/10">Regeln</a><a href="faq.html" class="px-3 py-2 rounded-xl hover:bg-white/10">FAQ</a><a href="support.html" class="px-3 py-2 rounded-xl hover:bg-white/10">Support</a><a href="appeal.html" class="px-3 py-2 rounded-xl hover:bg-white/10">Entbannung</a></div></header>
+
+<main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+<section class="mt-8 glass rounded-3xl p-7 sm:p-10 relative overflow-hidden">
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1600&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="">
+<div class="relative"><span class="chip">MOMENTE AUS UNSERER BLOCKWELT</span><h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight mt-3">News & <span class="text-cyan-300">Community.</span></h1><p class="text-slate-300/90 text-sm mt-3 max-w-xl">Bauprojekte, Updates und Geschichten vom Server – mit Bildern und Platz für Kommentare. Kommentare erscheinen nach Team-Freigabe.</p>
+<div class="flex flex-wrap gap-3 mt-5"><input id="newsSearch" placeholder="Beiträge suchen …" class="bg-black/40 border border-white/15 rounded-xl px-4 py-2.5 text-sm w-64"><select id="newsFilter" class="bg-black/40 border border-white/15 rounded-xl px-4 py-2.5 text-sm"><option value="alle">Alle Kategorien</option><option>Update</option><option>Community</option><option>Guide</option><option>Event</option><option>Fair Play</option><option>Start</option></select><button onclick="initNews()" class="rounded-xl border border-white/20 px-4 py-2.5 text-sm font-bold hover:bg-white/10">↻ Aktualisieren</button></div></div>
+</section>
+
+<div id="newsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8"></div>
+
+<section class="grid md:grid-cols-2 gap-5 mt-10">
+<div class="glass rounded-2xl p-6"><h2 class="font-display font-bold text-xl">Mehr als ein Server.</h2><p class="text-sm text-slate-400 mt-2">Bleib respektvoll, teile keine privaten Daten und beachte die <a href="regeln.html" class="text-cyan-300 font-bold">Regeln</a>.</p><a href="faq.html" class="mt-3 inline-block text-sm font-bold text-cyan-300">Neu hier? Zum FAQ →</a></div>
+<div class="glass rounded-2xl p-6"><h2 class="font-display font-bold text-xl">Problem melden?</h2><p class="text-sm text-slate-400 mt-2">Persönliches gehört ins private Ticket – nenne Beitrag + Kommentar.</p><a href="support.html" class="mt-3 inline-block rounded-xl bg-cyan-400 text-[#06222b] text-sm font-bold px-4 py-2">Support öffnen →</a></div>
+</section>
+
+<section class="glass rounded-2xl p-6 mt-5">
+<h2 class="font-display font-bold text-lg">Eigenen Kommentar entfernen</h2>
+<p class="text-xs text-slate-400">Nutze ID + privaten Löschcode aus deiner Bestätigung. Bei Verlust hilft der Support.</p>
+<form id="commentDelete" class="grid sm:grid-cols-[1fr_1fr_auto] gap-3 mt-3">
+<input name="cid" required placeholder="Kommentar-ID (z.B. C-AB12)" class="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm">
+<input name="ccode" required placeholder="Privater Löschcode" class="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm">
+<button class="rounded-xl border border-rose-300/40 text-rose-200 text-sm font-bold px-4 py-2.5 hover:bg-rose-500/10">Entfernen</button>
+</form>
+</section>
+</main>
+
+<!-- Post Dialog (Original: Beitrag + Kommentare) -->
+<dialog id="postDialog" class="w-[min(680px,94vw)]"><div class="glass-strong rounded-3xl overflow-hidden max-h-[88vh] flex flex-col">
+<img id="postImg" class="h-56 w-full object-cover" alt=""><div class="p-6 overflow-auto">
+<p id="postMeta" class="text-[11px] tracking-widest text-cyan-200 font-bold"></p>
+<div class="flex items-start justify-between gap-3"><h3 id="postTitle" class="font-display font-bold text-2xl"></h3><button data-close="postDialog" class="w-9 h-9 shrink-0 rounded-xl border border-white/15">×</button></div>
+<p id="postText" class="text-sm text-slate-300 mt-3 leading-relaxed"></p>
+<div class="pixel-divider my-5"></div>
+<h4 class="font-bold text-sm">Kommentare <span class="text-xs font-normal text-slate-500">(Freigabe durch Team · Demo speichert lokal)</span></h4>
+<div id="commentList" class="grid gap-2 mt-3"></div>
+<form id="commentForm" class="grid gap-2 mt-4">
+<input type="hidden" name="postId" id="postId">
+<div class="grid sm:grid-cols-2 gap-2"><input name="name" required pattern="[A-Za-z0-9_]{1,16}" maxlength="16" placeholder="Minecraft-Name" class="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"><input name="code" placeholder="Löschcode merken (optional)" class="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></div>
+<textarea name="text" required minlength="2" maxlength="500" rows="2" placeholder="Dein Kommentar …" class="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea>
+<button class="rounded-xl bg-cyan-400 text-[#06222b] font-bold text-sm py-2.5">Kommentar senden (mit Freigabe)</button>
+<p id="commentHint" class="text-xs text-cyan-200"></p>
+</form>
+</div></div></dialog>
+
+<!-- New Post Dialog (Original: Beitrag erstellen) -->
+<dialog id="newPostDialog" class="w-[min(560px,94vw)]"><div class="glass-strong rounded-3xl p-6 sm:p-8">
+<div class="flex justify-between items-start"><div><span class="chip">TEAM · NEUE GESCHICHTE</span><h3 class="font-display font-bold text-2xl mt-2">Beitrag erstellen</h3></div><button data-close="newPostDialog" class="w-9 h-9 rounded-xl border border-white/15">×</button></div>
+<form id="newPostForm" class="grid gap-3 mt-4">
+<label class="text-xs font-bold">Titel<input name="title" required minlength="4" maxlength="80" placeholder="Titel" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label>
+<label class="text-xs font-bold">Beitrag<textarea name="text" required minlength="10" maxlength="2000" rows="4" placeholder="Deine Geschichte …" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea></label>
+<label class="text-xs font-bold">Bild-URL (optional)<input name="img" placeholder="https://…" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label>
+<p class="text-[11px] text-slate-500">Teile nur Bilder, die du veröffentlichen darfst. Demo speichert lokal.</p>
+<div class="flex gap-2"><button class="flex-1 rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm">Veröffentlichen</button><button type="button" data-close="newPostDialog" class="rounded-xl border border-white/20 px-5 py-3 text-sm font-bold">Abbrechen</button></div>
+</form></div></dialog>
+
+<footer class="border-t border-white/10 bg-black/20 backdrop-blur-xl"><div class="max-w-6xl mx-auto px-4 py-8 flex flex-wrap gap-4 text-xs text-slate-400"><a href="index.html">Start</a><a href="regeln.html">Regeln</a><a href="support.html">Support</a><a href="faq.html">FAQ</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><span class="ml-auto">Unabhängiges Community-Projekt.</span></div></footer>
+<button data-open="kiDialog" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full pl-2 pr-5 py-2 glass-strong !border-cyan-300/40"><span class="w-9 h-9 rounded-full grid place-items-center bg-gradient-to-br from-cyan-300 to-violet-500 text-[#06222b] font-bold">✦</span><span class="text-sm font-bold">Frag die KI</span></button>
+<dialog id="kiDialog" class="w-[min(440px,92vw)]"><div class="glass-strong rounded-3xl overflow-hidden"><div class="flex items-center justify-between px-5 py-4 border-b border-white/10"><b class="text-sm">CreatorWave · KI</b><button data-close="kiDialog" class="w-8 h-8 rounded-lg border border-white/15">×</button></div><div id="cw-ai-body" class="p-4 max-h-[50vh] overflow-auto"></div><form id="cw-ai-form" class="p-4 border-t border-white/10"><textarea id="cw-ai-question" required rows="2" placeholder="Frage …" class="w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2 text-sm"></textarea><span id="cw-ai-status" class="text-xs text-cyan-200"></span><button class="mt-2 w-full rounded-xl bg-cyan-400 text-[#06222b] font-bold py-2.5 text-sm">Senden</button></form></div></dialog>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[60] glass-strong rounded-full px-5 py-2.5 text-sm font-semibold"></div>
+</body></html>

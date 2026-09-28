@@ -1,0 +1,57 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support · Creator Wave</title><link rel="icon" href="assets/logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{wave:{cyan:'#64dbe9'}},fontFamily:{display:['Space Grotesk','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"><script src="assets/js/main.js" defer></script>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-3 z-50 mx-3 sm:mx-6"><div class="glass rounded-2xl max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+<a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl" alt=""><span class="font-display font-bold">CREATOR <span class="text-cyan-300">WAVE</span></span></a>
+<nav class="hidden lg:flex gap-6 mx-auto text-sm text-slate-300"><a href="index.html" class="hover:text-cyan-300">Start</a><a href="news.html" class="hover:text-cyan-300">News</a><a href="regeln.html" class="hover:text-cyan-300">Regeln</a><a href="faq.html" class="hover:text-cyan-300">FAQ</a><a href="support.html" class="text-cyan-300 font-bold">Support</a><a href="appeal.html" class="hover:text-cyan-300">Entbannung</a></nav>
+<button id="navToggle" class="lg:hidden ml-auto w-10 h-10 grid place-items-center rounded-xl border border-white/15 bg-white/5">☰</button></div>
+<div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 glass rounded-2xl p-4 grid text-sm"><a href="index.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">Start</a><a href="faq.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">FAQ</a><a href="appeal.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">Entbannung</a></div></header>
+
+<main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+<section class="mt-8 max-w-3xl"><span class="chip">WIR HÖREN DIR ZU</span><h1 class="font-display text-4xl sm:text-6xl font-bold tracking-tight mt-3">Du fragst.<br><span class="text-cyan-300">Wir helfen.</span></h1><p class="text-slate-400 text-sm mt-3">Ticket ist nur für dich (mit Code) + berechtigtes Team sichtbar. Demo speichert lokal – Original läuft über Server-Backend.</p></section>
+
+<div class="mt-8 grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
+<section class="glass rounded-3xl p-6 sm:p-8">
+<div class="flex gap-4 border-b border-white/10 pb-4 mb-5 text-sm font-bold"><button id="newTab" class="text-cyan-300">Neues Ticket</button><button id="existingTab" class="text-slate-400">Mein Ticket öffnen</button></div>
+<form id="ticketCreate" class="grid gap-3">
+<label class="text-xs font-bold">Minecraft-Name<input name="name" required pattern="[A-Za-z0-9_]{1,16}" maxlength="16" placeholder="Spielername" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label>
+<div class="grid sm:grid-cols-2 gap-3"><label class="text-xs font-bold">Kategorie<select name="category" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"><option value="question">Allgemeine Frage</option><option value="technical">Technisches Problem</option><option value="report">Spieler / Vorfall melden</option><option value="other">Sonstiges</option></select></label>
+<label class="text-xs font-bold">Betreff<input name="subject" required minlength="5" maxlength="100" placeholder="Worum geht es?" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label></div>
+<label class="text-xs font-bold">Nachricht<textarea name="message" required minlength="20" maxlength="3000" rows="5" placeholder="Zeitpunkt, Fehlermeldung, Schritte davor …" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea></label>
+<label class="hidden">Website<input name="website" tabindex="-1"></label>
+<p class="text-[11px] text-slate-500">Verarbeitung siehe <a href="datenschutz.html" class="text-cyan-300">Datenschutz</a>. Keine Passwörter! Name ist nicht verifiziert.</p>
+<button class="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm hover:brightness-110">Ticket absenden ↗</button><p class="error text-rose-300 text-xs"></p>
+</form>
+<div id="receipt" hidden class="rounded-xl border border-cyan-300/30 bg-cyan-400/10 p-4 text-sm"></div>
+<form id="ticketAccess" hidden class="grid gap-3">
+<label class="text-xs font-bold">Dein privater Ticketcode<input name="token" required placeholder="Code aus Bestätigung" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm font-mono"></label>
+<p class="text-[11px] text-slate-500">Wer den Code kennt, kann lesen & antworten. Nicht öffentlich teilen.</p>
+<button class="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm">Ticket öffnen ↗</button><p class="error text-rose-300 text-xs"></p>
+</form>
+</section>
+
+<aside class="glass rounded-3xl p-6 sm:p-7">
+<span class="text-3xl">✳</span><h2 class="font-display font-bold text-2xl mt-3">Eine Frage.<br>Ein Gespräch.</h2>
+<p class="text-sm text-slate-400 mt-2">Code nach Absenden sichern – damit liest du Antworten.</p>
+<div class="mt-5 rounded-2xl bg-white/5 border border-white/10 p-4 text-sm"><b>Bereits gebannt?</b><p class="text-slate-400 text-xs mt-1">Eigenes Formular mit Bann-ID nutzen.</p><a href="appeal.html" class="text-cyan-300 font-bold text-sm mt-2 inline-block">Entbannungsantrag →</a></div>
+<div class="mt-3 rounded-2xl bg-white/5 border border-white/10 p-4 text-sm"><b>Lieber zur Community?</b><p class="text-slate-400 text-xs mt-1">Austausch zwischen Sessions.</p><a target="_blank" rel="noopener" href="https://discord.gg/yKjJM9BV9u" class="text-cyan-300 font-bold text-sm mt-2 inline-block">Discord öffnen ↗</a></div>
+<img loading="lazy" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=600&auto=format&fit=crop" class="rounded-xl mt-4 h-32 w-full object-cover ring-1 ring-white/15" alt="">
+</aside>
+</div>
+
+<section id="ticketThread" hidden class="glass rounded-3xl p-6 sm:p-8 mt-6">
+<div class="flex flex-wrap items-center justify-between gap-3"><div><span id="ticketMeta" class="text-[11px] tracking-widest text-cyan-200 font-bold"></span><h2 id="ticketTitle" class="font-display font-bold text-2xl"></h2></div><button id="refreshTicket" onclick="toast('Aktualisiert (Demo)')" class="rounded-xl border border-white/20 px-4 py-2.5 text-sm font-bold hover:bg-white/10">↻ Aktualisieren</button></div>
+<div id="messages" class="mt-4"></div>
+<form id="ticketReply" class="mt-3 grid gap-2"><label class="text-xs font-bold">Deine Antwort<textarea name="message" required minlength="3" maxlength="3000" rows="3" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea></label><button class="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-2.5 text-sm">Antwort senden ↗</button><p class="error text-xs"></p></form>
+<p class="text-[11px] text-slate-500 mt-2">Geschlossen? Dann oben ein neues Ticket erstellen.</p>
+</section>
+</main>
+<footer class="border-t border-white/10 bg-black/20"><div class="max-w-6xl mx-auto px-4 py-8 flex flex-wrap gap-4 text-xs text-slate-400"><a href="index.html">Start</a><a href="appeal.html">Entbannung</a><a href="datenschutz.html">Datenschutz</a></div></footer>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[60] glass-strong rounded-full px-5 py-2.5 text-sm font-semibold"></div>
+</body></html>

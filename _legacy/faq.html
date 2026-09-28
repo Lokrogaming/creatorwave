@@ -1,0 +1,65 @@
+<!doctype html><html lang="de"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ & Commands · Creator Wave</title><link rel="icon" href="assets/logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{wave:{cyan:'#64dbe9'}},fontFamily:{display:['Space Grotesk','Inter','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css"><script src="assets/js/main.js" defer></script>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col">
+<header class="sticky top-3 z-50 mx-3 sm:mx-6"><div class="glass rounded-2xl max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+<a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl" alt=""><span class="font-display font-bold">CREATOR <span class="text-cyan-300">WAVE</span></span></a>
+<nav class="hidden lg:flex gap-6 mx-auto text-sm text-slate-300"><a href="index.html" class="hover:text-cyan-300">Start</a><a href="news.html" class="hover:text-cyan-300">News</a><a href="regeln.html" class="hover:text-cyan-300">Regeln</a><a href="faq.html" class="text-cyan-300 font-bold">FAQ & Commands</a><a href="support.html" class="hover:text-cyan-300">Support</a><a href="appeal.html" class="hover:text-cyan-300">Entbannung</a></nav>
+<button id="navToggle" class="lg:hidden ml-auto w-10 h-10 grid place-items-center rounded-xl border border-white/15 bg-white/5">☰</button></div>
+<div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 glass rounded-2xl p-4 grid text-sm"><a href="index.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">Start</a><a href="news.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">News</a><a href="regeln.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">Regeln</a><a href="support.html" class="px-3 py-2 hover:bg-white/10 rounded-xl">Support</a></div></header>
+
+<main class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+<section class="mt-8 grid lg:grid-cols-[1fr_.8fr] gap-6 items-stretch">
+<div><span class="chip">DEIN KOMPASS FÜR DIE ERSTEN BLÖCKE</span><h1 class="font-display text-4xl sm:text-6xl font-bold tracking-tight mt-3">FAQ & <span class="text-cyan-300">Commands.</span></h1>
+<div class="flex flex-wrap gap-2 mt-5 text-xs font-bold"><a href="#start" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 hover:border-cyan-300/50">Ankommen</a><a href="#commands" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 hover:border-cyan-300/50">Commands</a><a href="#extras" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 hover:border-cyan-300/50">Skills & Voice</a><a href="#hilfe" class="rounded-full border border-white/15 bg-white/5 px-4 py-2 hover:border-cyan-300/50">Website & Hilfe</a></div>
+<input id="faqSearch" placeholder="FAQ durchsuchen … (z.B. home, grab, ticket)" class="mt-5 w-full max-w-md bg-black/30 border border-white/15 rounded-xl px-4 py-3 text-sm"></div>
+<div class="rounded-3xl overflow-hidden glass relative min-h-[260px]"><img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=1000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt=""><div class="absolute inset-0 bg-gradient-to-t from-[#060d18] to-transparent"></div><div class="absolute bottom-4 left-4 right-4 glass rounded-xl p-4 text-sm"><b>Chat öffnen mit T</b> → Befehl mit / eingeben → <b>Tab</b> für Autovervollständigung.</div></div>
+</section>
+
+<section id="start" class="mt-10"><h2 class="font-display font-bold text-2xl">Ankommen & Spielen</h2><div class="grid md:grid-cols-3 gap-4 mt-4">
+<div data-faq-item class="glass rounded-2xl p-5"><b>Wie trete ich bei?</b><p class="text-sm text-slate-400 mt-2">Java 1.21.11 → Mehrspieler → Hinzufügen → <code class="text-cyan-200 font-mono">creatorwave.de</code>. Vorher <a href="regeln.html" class="text-cyan-300">Regeln</a> lesen. Bei Fehlern Version + Meldung an Support.</p></div>
+<div data-faq-item class="glass rounded-2xl p-5"><b>Was mache ich zuerst?</b><p class="text-sm text-slate-400 mt-2">Spawn anschauen, Hallo sagen, Materialien sammeln, freien Bauplatz suchen. Abstand zu fremden Builds, Absprachen einhalten.</p></div>
+<div data-faq-item class="glass rounded-2xl p-5"><b>Griefing / PvP erlaubt?</b><p class="text-sm text-slate-400 mt-2">Nein – fremde Sachen tabu, PvP nur mit Zustimmung außerhalb PvP-Zonen. Cheats/X-Ray/Bug-Abuse verboten. Schäden mit Ort+Zeit im Support melden.</p></div>
+</div></section>
+
+<section id="commands" class="mt-10"><div class="flex items-center justify-between flex-wrap gap-3"><h2 class="font-display font-bold text-2xl">Die wichtigsten Commands</h2><span class="text-xs text-slate-500">Klick zum Kopieren</span></div>
+<div class="glass rounded-2xl overflow-hidden mt-4 overflow-x-auto"><table class="w-full text-sm min-w-[640px]">
+<thead><tr class="text-left text-[11px] tracking-widest text-slate-400 border-b border-white/10"><th class="p-4">COMMAND</th><th class="p-4">WAS PASSIERT?</th><th class="p-4"></th></tr></thead><tbody class="divide-y divide-white/5">
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi spawn</td><td class="p-4 text-slate-300">Zurück zum Spawn.</td><td class="p-4"><button data-copy="/cmi spawn" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi sethome zuhause</td><td class="p-4 text-slate-300">Speichert Standort als Home.</td><td class="p-4"><button data-copy="/cmi sethome zuhause" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi home zuhause</td><td class="p-4 text-slate-300">Teleport zum Home.</td><td class="p-4"><button data-copy="/cmi home zuhause" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi homes · /cmi delhome</td><td class="p-4 text-slate-300">Homes zeigen / löschen.</td><td class="p-4"><button data-copy="/cmi homes" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi tpa Spielername</td><td class="p-4 text-slate-300">Teleport-Anfrage senden.</td><td class="p-4"><button data-copy="/cmi tpa Spielername" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi tpaccept · /cmi tpdeny</td><td class="p-4 text-slate-300">Anfrage annehmen / ablehnen.</td><td class="p-4"><button data-copy="/cmi tpaccept" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi msg · /cmi reply</td><td class="p-4 text-slate-300">Private Nachricht / antworten.</td><td class="p-4"><button data-copy="/cmi msg Spielername Nachricht" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/cmi balance · /cmi pay</td><td class="p-4 text-slate-300">Kontostand / überweisen.</td><td class="p-4"><button data-copy="/cmi balance" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+<tr data-faq-item><td class="p-4 font-mono text-cyan-200">/skills · /stats · /sk help</td><td class="p-4 text-slate-300">AuraSkills öffnen / Werte / Hilfe.</td><td class="p-4"><button data-copy="/skills" class="text-xs border border-white/15 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">Kopieren</button></td></tr>
+</tbody></table></div>
+<div class="grid md:grid-cols-2 gap-4 mt-4">
+<div data-faq-item class="glass rounded-2xl p-5 text-sm text-slate-300"><b>Warum /cmi davor?</b><br><span class="text-slate-400">Eindeutige CMI-Schreibweise. Kurzformen wie /home funktionieren oft, /cmi verhindert Verwechslungen. Rechte/Cooldowns hängen von Rang & Config ab.</span></div>
+<div data-faq-item class="glass rounded-2xl p-5 text-sm text-slate-300"><b>Command geht nicht?</b><br><span class="text-slate-400">Schreibweise prüfen, stehen bleiben bei Teleport-Wartezeit, „Keine Berechtigung“ = Rang/Bereich. Befehl + Fehlermeldung in Support (keine Passwörter).</span></div>
+</div></section>
+
+<section id="extras" class="mt-10"><h2 class="font-display font-bold text-2xl">Skills, Gräber & Voice</h2><div class="grid md:grid-cols-2 gap-4 mt-4">
+<details data-faq-item open class="glass rounded-2xl p-5"><summary class="font-bold cursor-pointer list-none">Wie funktionieren Fähigkeiten? <span class="text-cyan-300">+</span></summary><p class="text-sm text-slate-400 mt-2">AuraSkills belohnt Abbauen, Holzfällen, Farmen. <code class="font-mono text-cyan-200">/skills</code> Fortschritt, <code class="font-mono text-cyan-200">/stats</code> Werte. Boni & Speed = Serverconfig.</p></details>
+<details data-faq-item class="glass rounded-2xl p-5"><summary class="font-bold cursor-pointer list-none">Was bei Tod mit Items? <span class="text-cyan-300">+</span></summary><p class="text-sm text-slate-400 mt-2">AxGraves kann ein Grab erzeugen – Chatmeldung beachten. Ob/wie lange hängt von Einstellungen & Todesursache ab. Nicht darauf verlassen!</p></details>
+<details data-faq-item class="glass rounded-2xl p-5"><summary class="font-bold cursor-pointer list-none">Timber & VeinMiner? <span class="text-cyan-300">+</span></summary><p class="text-sm text-slate-400 mt-2">Erleichtern Abbau zusammenhängender Blöcke – nur an eigenen Ressourcen testen. Kein Abbau fremder Bauwerke!</p></details>
+<details data-faq-item class="glass rounded-2xl p-5"><summary class="font-bold cursor-pointer list-none">Sprachchat nutzen? <span class="text-cyan-300">+</span></summary><p class="text-sm text-slate-400 mt-2">Simple Voice Chat braucht Client-Mod für deine Version. Im Spiel mit <b>V</b> Menü öffnen, Mikro + Taste einrichten. Private Gespräche nur mit Zustimmung posten.</p></details>
+</div></section>
+
+<section id="hilfe" class="mt-10"><h2 class="font-display font-bold text-2xl">Website & Hilfe</h2><div class="grid md:grid-cols-2 gap-4 mt-4">
+<div data-faq-item class="glass rounded-2xl p-5 text-sm"><b>Wie funktioniert News?</b><p class="text-slate-400 mt-1">Team postet Bilder/News auf <a href="news.html" class="text-cyan-300">/news</a>. Kommentieren mit Minecraft-Namen (nicht verifiziert), Freigabe nötig, Löschcode sichern. Ungeprüfte löschen sich nach 7 Tagen.</p></div>
+<div data-faq-item class="glass rounded-2xl p-5 text-sm"><b>Wie bekomme ich Hilfe?</b><p class="text-slate-400 mt-1"><a href="support.html" class="text-cyan-300">Support</a> → Ticket → Code sichern → „Mein Ticket öffnen“ für Antworten. Code nicht teilen!</p></div>
+<div data-faq-item class="glass rounded-2xl p-5 text-sm"><b>Entbannungsantrag?</b><p class="text-slate-400 mt-1"><a href="appeal.html" class="text-cyan-300">Entbannung</a> mit Name + Bann-ID + ehrlicher Erklärung. Statuscode sichern. Hebt Bann nicht automatisch auf.</p></div>
+<div data-faq-item class="glass rounded-2xl p-5 text-sm"><b>Account nötig? Status offline?</b><p class="text-slate-400 mt-1">Kein Website-Account nötig (Team-Login nur für Team, nie MS-Passwort eingeben). „Nicht verfügbar“ = Abruf-Fehler, kein sicherer Offline-Beweis – im Spiel testen.</p></div>
+</div>
+<p class="text-xs text-slate-500 mt-4">Stand: 22. September 2026 · Noch offen? <a href="support.html" class="text-cyan-300 font-bold">Frag unser Team im Support.</a></p></section>
+</main>
+<footer class="border-t border-white/10 bg-black/20"><div class="max-w-6xl mx-auto px-4 py-8 flex flex-wrap gap-4 text-xs text-slate-400"><a href="index.html">Start</a><a href="support.html">Support</a><a href="impressum.html">Impressum</a></div></footer>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[60] glass-strong rounded-full px-5 py-2.5 text-sm font-semibold"></div>
+</body></html>

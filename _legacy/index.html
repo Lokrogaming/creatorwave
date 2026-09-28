@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Creator Wave · Gemeinsam mehr erleben</title>
+<meta name="description" content="Creator Wave – deine Minecraft-Community. Gemeinsam bauen, fair spielen, Neues entdecken.">
+<link rel="icon" href="assets/logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{wave:{cyan:'#64dbe9',deep:'#060d18',panel:'#0e1a2b'}},fontFamily:{display:['Space Grotesk','Inter','sans-serif']},boxShadow:{glass:'0 8px 32px rgba(0,0,0,.35)'}}}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body class="text-slate-100 antialiased min-h-screen flex flex-col">
+
+<!-- BG blobs -->
+<div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="blob absolute -top-20 -left-20 w-[420px] h-[420px] rounded-full bg-cyan-500/30"></div>
+  <div class="blob absolute top-40 -right-24 w-[480px] h-[480px] rounded-full bg-violet-500/25"></div>
+  <div class="blob absolute bottom-0 left-1/3 w-[500px] h-[300px] rounded-full bg-emerald-500/10"></div>
+</div>
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-cyan-400 focus:text-black focus:px-4 focus:py-2 focus:rounded-lg">Zum Inhalt</a>
+
+<!-- NAV glass -->
+<header class="sticky top-3 z-50 mx-3 sm:mx-6">
+  <div class="glass rounded-2xl max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="CreatorWave Logo" class="w-10 h-10 rounded-xl ring-1 ring-white/20">
+      <span class="font-display font-bold tracking-wide leading-none">CREATOR <span class="text-cyan-300">WAVE</span><small class="block text-[9px] tracking-[.25em] text-slate-400 font-semibold mt-1">MINECRAFT COMMUNITY</small></span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-6 mx-auto text-sm text-slate-300" aria-label="Hauptnavigation">
+      <a data-nav href="index.html" class="hover:text-cyan-300 font-semibold">Start</a>
+      <a data-nav href="news.html" class="hover:text-cyan-300">News</a>
+      <a data-nav href="regeln.html" class="hover:text-cyan-300">Regeln</a>
+      <a data-nav href="faq.html" class="hover:text-cyan-300">FAQ & Commands</a>
+      <a data-nav href="support.html" class="hover:text-cyan-300">Support</a>
+      <a data-nav href="appeal.html" class="hover:text-cyan-300">Entbannung</a>
+    </nav>
+    <div class="ml-auto lg:ml-0 flex items-center gap-2">
+      <button data-copy-ip class="hidden sm:inline-flex items-center gap-2 text-xs font-mono bg-white/5 border border-white/15 rounded-xl px-3 py-2 hover:border-cyan-300/50"><span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="server-address">creatorwave.de</span> ⎘</button>
+      <a href="support.html" class="hidden md:inline-flex text-xs font-bold border border-white/20 rounded-xl px-4 py-2.5 hover:bg-white/10">Team-Login ↗</a>
+      <button id="navToggle" class="lg:hidden w-10 h-10 grid place-items-center rounded-xl border border-white/15 bg-white/5" aria-label="Menü">☰</button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden lg:hidden max-w-6xl mx-auto mt-2 glass rounded-2xl p-4 grid gap-1 text-sm">
+    <a href="index.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10 font-semibold">Start</a>
+    <a href="news.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10">News & Community</a>
+    <a href="regeln.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10">Regeln</a>
+    <a href="faq.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10">FAQ & Commands</a>
+    <a href="support.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10">Support</a>
+    <a href="appeal.html" class="px-3 py-2.5 rounded-xl hover:bg-white/10">Entbannung</a>
+    <div class="flex gap-2 pt-2">
+      <button data-copy-ip class="flex-1 rounded-xl bg-cyan-400 text-[#06222b] font-bold py-2.5">IP kopieren</button>
+      <a href="https://discord.gg/yKjJM9BV9u" target="_blank" rel="noopener" class="flex-1 text-center rounded-xl border border-white/20 py-2.5 font-bold">Discord ↗</a>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-6xl mx-auto w-full px-4 sm:px-6 mt-4 flex items-center justify-between text-[11px] tracking-widest text-slate-400 font-semibold">
+  <span>MINECRAFT · GEMEINSAM BAUEN. GEMEINSAM ERLEBEN.</span>
+  <span class="hidden sm:flex gap-4"><a href="impressum.html" class="hover:text-cyan-300">Impressum</a><a href="datenschutz.html" class="hover:text-cyan-300">Datenschutz</a></span>
+</div>
+
+<main id="main" class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+
+  <!-- HERO -->
+  <section class="mt-6 grid lg:grid-cols-[1.1fr_.9fr] gap-6 items-stretch">
+    <div class="glass rounded-3xl p-7 sm:p-10 relative overflow-hidden reveal">
+      <div class="hero-grid absolute inset-0"></div>
+      <div class="relative">
+        <span class="chip"><span class="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-pulse"></span> DEIN MINECRAFT-PROJEKT · JAVA 1.21.11</span>
+        <h1 class="font-display font-bold text-4xl sm:text-6xl leading-[1.02] tracking-tight mt-5">Deine Ideen.<br>Unsere Welt.<br><span class="text-gradient">Creator Wave.</span></h1>
+        <p class="text-slate-300/90 mt-5 max-w-md">Blöcke setzen, Ressourcen sammeln und gemeinsam Bauprojekte verwirklichen. Lerne neue Leute kennen und mach aus kleinen Ideen etwas Großes.</p>
+        <div class="flex flex-wrap gap-3 mt-7">
+          <button data-copy-ip class="rounded-xl bg-cyan-400 text-[#06222b] font-bold px-5 py-3.5 text-sm btn-glow hover:brightness-110 active:scale-95 transition">Serveradresse kopieren ↗</button>
+          <a href="https://discord.gg/yKjJM9BV9u" target="_blank" rel="noopener" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3.5 text-sm font-bold hover:bg-white/10 backdrop-blur">Zum Discord ↗</a>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+          <span class="font-mono bg-black/40 border border-white/10 rounded-lg px-3 py-1.5"><span class="server-address">creatorwave.de</span></span>
+          <span class="inline-flex items-center gap-2"><span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-slate-500"></span><span id="serverState">Status wird geladen …</span> · <b id="onlineCount" class="text-slate-200">—</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="relative rounded-3xl overflow-hidden glass reveal min-h-[340px] group">
+      <img src="https://images.unsplash.com/photo-1587573089734-09cb69c0f2b4?q=80&w=1400&auto=format&fit=crop" alt="Minecraft-Welt bei Nacht" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-[1.2s]">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060d18] via-[#060d18]/30 to-transparent"></div>
+      <div class="absolute top-4 left-4 right-4 flex justify-between items-start">
+        <span class="chip !bg-black/40 backdrop-blur">CW / 01 · BLOCKWELT</span>
+        <span class="text-[10px] font-mono text-cyan-100/80 text-right leading-relaxed bg-black/30 backdrop-blur rounded-lg px-3 py-2 border border-white/10">DEINE WELT.<br>DEIN PROJEKT.</span>
+      </div>
+      <div class="absolute bottom-4 left-4 right-4 glass rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-300 to-violet-500 grid place-items-center text-xl font-bold text-[#06222b]">◈</div>
+        <div class="flex-1">
+          <p class="text-[10px] tracking-[.2em] text-cyan-200 font-bold">BLOCK FÜR BLOCK. GEMEINSAM.</p>
+          <p class="text-sm font-semibold">Spawn, Projekte & Events – alles live.</p>
+        </div>
+        <a href="news.html" class="text-xs font-bold bg-white/10 border border-white/15 rounded-xl px-3 py-2 hover:bg-white/20">Feed →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS STRIP glass -->
+  <section class="mt-6 glass rounded-2xl p-5 sm:p-6 grid grid-cols-2 lg:grid-cols-4 gap-5 items-center reveal">
+    <div><span class="text-[10px] tracking-[.2em] text-slate-400 font-bold">SERVERSTATUS</span><strong id="serverState2" class="block text-lg mt-1">Wird geladen …</strong></div>
+    <div><span class="text-[10px] tracking-[.2em] text-slate-400 font-bold">SPIELER ONLINE</span><strong id="onlineCount2" class="block text-lg mt-1">—</strong></div>
+    <div><span class="text-[10px] tracking-[.2em] text-slate-400 font-bold">DEIN WEG ZU UNS</span><strong class="block font-mono text-cyan-200 mt-1">creatorwave.de</strong></div>
+    <a href="support.html" class="rounded-xl bg-white/5 border border-cyan-300/25 px-4 py-3 text-sm font-bold text-cyan-200 hover:bg-cyan-400/10 text-center">Du brauchst Hilfe? ↗</a>
+  </section>
+  <p id="statusNote" class="text-[11px] text-slate-500 text-right mt-2">Die Spielerzahl kommt direkt vom Minecraft-Server.</p>
+
+  <!-- NEWS PREVIEW -->
+  <section class="mt-12">
+    <div class="flex flex-wrap items-end justify-between gap-4 reveal">
+      <div><span class="chip">ÖFFENTLICH FÜR DIE COMMUNITY</span><h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-3">Neues von Creator Wave.</h2></div>
+      <a href="news.html" class="rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold hover:bg-white/10">Alle Beiträge & Kommentare ↗</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
+      <article class="glass glass-hover rounded-2xl overflow-hidden reveal">
+        <div class="h-44 overflow-hidden relative"><img loading="lazy" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop" alt="Spawn Update" class="w-full h-full object-cover"><span class="absolute top-3 left-3 chip !py-1">UPDATE</span></div>
+        <div class="p-5"><p class="text-[11px] text-cyan-200/70 font-bold tracking-widest">22. SEP 2026 · TEAM</p><h3 class="font-display font-bold text-lg mt-1">Spawn-Update: Neue Wege & Deko</h3><p class="text-sm text-slate-300/80 mt-2 line-clamp-3">Der Spawn hat neue Wege, Laternen und Infotafeln bekommen – perfekt für deinen ersten Moment.</p><a href="news.html" class="text-cyan-300 text-sm font-bold mt-3 inline-block">Weiterlesen →</a></div>
+      </article>
+      <article class="glass glass-hover rounded-2xl overflow-hidden reveal">
+        <div class="h-44 overflow-hidden relative"><img loading="lazy" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" alt="Community Brücke" class="w-full h-full object-cover"><span class="absolute top-3 left-3 chip !py-1">COMMUNITY</span></div>
+        <div class="p-5"><p class="text-[11px] text-cyan-200/70 font-bold tracking-widest">14. SEP 2026 · TEAM</p><h3 class="font-display font-bold text-lg mt-1">Brücke über den Fluss – Gemeinschaftsprojekt</h3><p class="text-sm text-slate-300/80 mt-2 line-clamp-3">Vom ersten Block zum Großprojekt: Zeig deine Idee im Discord und bau mit.</p><a href="news.html" class="text-cyan-300 text-sm font-bold mt-3 inline-block">Weiterlesen →</a></div>
+      </article>
+      <article class="glass glass-hover rounded-2xl overflow-hidden reveal">
+        <div class="h-44 overflow-hidden relative"><img loading="lazy" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=800&auto=format&fit=crop" alt="Bauabend" class="w-full h-full object-cover"><span class="absolute top-3 left-3 chip !py-1">EVENT</span></div>
+        <div class="p-5"><p class="text-[11px] text-cyan-200/70 font-bold tracking-widest">28. AUG 2026 · TEAM</p><h3 class="font-display font-bold text-lg mt-1">Event-Rückblick: Bauabend am See</h3><p class="text-sm text-slate-300/80 mt-2 line-clamp-3">Hütten, Stege und viele Screenshots – danke an alle, die dabei waren!</p><a href="news.html" class="text-cyan-300 text-sm font-bold mt-3 inline-block">Weiterlesen →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="mt-14">
+    <div class="reveal"><span class="chip">MEHR ALS NUR BLÖCKE</span><h2 class="font-display text-3xl sm:text-4xl font-bold tracking-tight mt-3">Ein Platz für deine Ideen.</h2><p class="text-slate-400 text-sm mt-2 max-w-xl">Gute Ideen, fairer Umgang und die Menschen hinter den Spielernamen zählen bei uns.</p></div>
+    <div class="grid md:grid-cols-3 gap-5 mt-6">
+      <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-3xl">▧</span><p class="text-[10px] tracking-[.2em] text-cyan-200 font-bold mt-4">01 / GEMEINSCHAFT</p><h3 class="font-display font-bold text-xl mt-2">Zusammen macht's mehr Spaß.</h3><p class="text-sm text-slate-300/80 mt-2">Finde Mitspieler, zeig Projekte und tausch dich im Discord aus.</p><a class="text-cyan-300 text-sm font-bold mt-4 inline-block" target="_blank" rel="noopener" href="https://discord.gg/yKjJM9BV9u">Community entdecken ↗</a></article>
+      <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-3xl">◇</span><p class="text-[10px] tracking-[.2em] text-cyan-200 font-bold mt-4">02 / FAIR PLAY</p><h3 class="font-display font-bold text-xl mt-2">Klare Regeln. Gutes Miteinander.</h3><p class="text-sm text-slate-300/80 mt-2">Wir respektieren Zeit, Arbeit und Grenzen anderer – transparent geregelt.</p><a class="text-cyan-300 text-sm font-bold mt-4 inline-block" href="regeln.html">Regeln kennenlernen ↗</a></article>
+      <article class="glass glass-hover rounded-2xl p-6 reveal"><span class="text-3xl">✳</span><p class="text-[10px] tracking-[.2em] text-cyan-200 font-bold mt-4">03 / SUPPORT</p><h3 class="font-display font-bold text-xl mt-2">Ein offenes Ohr für dich.</h3><p class="text-sm text-slate-300/80 mt-2">Privates Ticket erstellen und mit dem Team im Gespräch bleiben.</p><div class="flex gap-2 mt-4"><a class="text-cyan-300 text-sm font-bold" href="support.html">Ticket erstellen ↗</a><span class="text-slate-600">·</span><button data-open="ticketDialog" class="text-cyan-300 text-sm font-bold">Schnell-Dialog öffnen</button></div></article>
+    </div>
+  </section>
+
+  <!-- STEPS + GALLERY -->
+  <section class="mt-14 grid lg:grid-cols-2 gap-6">
+    <div class="glass rounded-3xl p-7 sm:p-8 reveal">
+      <span class="chip">DREI SCHRITTE · EINE NEUE WELT</span>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold mt-3">Dein erster Moment<br>bei Creator Wave.</h2>
+      <ol class="mt-6 space-y-0">
+        <li class="flex gap-4 py-4 border-t border-white/10"><b class="font-mono text-cyan-300 text-sm pt-1">01</b><div><h3 class="font-bold">Minecraft starten</h3><p class="text-sm text-slate-400">Öffne Minecraft Java Edition 1.21.11.</p></div></li>
+        <li class="flex gap-4 py-4 border-t border-white/10"><b class="font-mono text-cyan-300 text-sm pt-1">02</b><div><h3 class="font-bold">Server hinzufügen</h3><p class="text-sm text-slate-400">Mehrspieler → Server hinzufügen → <code class="font-mono text-cyan-200 bg-black/40 px-1.5 py-0.5 rounded">creatorwave.de</code></p></div></li>
+        <li class="flex gap-4 py-4 border-y border-white/10"><b class="font-mono text-cyan-300 text-sm pt-1">03</b><div><h3 class="font-bold">Verbinden & ankommen</h3><p class="text-sm text-slate-400">Tritt bei, sag Hallo und frag nach, wenn du dich nicht auskennst.</p></div></li>
+      </ol>
+      <a href="regeln.html" class="mt-5 inline-flex rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-bold hover:bg-white/10">Vorher kurz die Regeln lesen ↗</a>
+    </div>
+    <div class="grid grid-cols-2 gap-4 reveal">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop" class="rounded-2xl h-48 sm:h-56 w-full object-cover ring-1 ring-white/15 hover:scale-[1.02] transition" alt="Landschaft">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800&auto=format&fit=crop" class="rounded-2xl h-48 sm:h-56 w-full object-cover ring-1 ring-white/15 mt-6 hover:scale-[1.02] transition" alt="Gaming">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" class="rounded-2xl h-48 sm:h-56 w-full object-cover ring-1 ring-white/15 -mt-2 hover:scale-[1.02] transition" alt="Community">
+      <div class="glass rounded-2xl p-5 mt-6 flex flex-col justify-center">
+        <p class="text-[10px] tracking-[.2em] text-cyan-200 font-bold">BILDER · UPDATES · MOMENTE</p>
+        <h3 class="font-display font-bold text-lg mt-1">Neues aus der Blockwelt.</h3>
+        <a href="news.html" class="mt-3 rounded-xl bg-cyan-400 text-[#06222b] text-sm font-bold px-4 py-2.5 text-center hover:brightness-110">Zum Feed ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMANDS teaser -->
+  <section class="mt-12 glass rounded-3xl p-7 sm:p-10 grid lg:grid-cols-[1fr_.9fr] gap-8 items-center reveal overflow-hidden relative">
+    <div>
+      <span class="chip">VOM LOGIN BIS ZUM BAUPROJEKT</span>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold mt-3">Ein guter Start, Block für Block.</h2>
+      <p class="text-sm text-slate-300/80 mt-2">Homes setzen, Mitspieler besuchen, Skills entdecken: Unser FAQ begleitet dich durch den Serveralltag.</p>
+      <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+        <button data-copy="/cmi sethome zuhause" class="bg-black/40 border border-white/10 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">/cmi sethome ⧉</button>
+        <button data-copy="/cmi home zuhause" class="bg-black/40 border border-white/10 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">/cmi home ⧉</button>
+        <button data-copy="/cmi tpa Spielername" class="bg-black/40 border border-white/10 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">/cmi tpa ⧉</button>
+        <button data-copy="/skills" class="bg-black/40 border border-white/10 rounded-lg px-3 py-1.5 hover:border-cyan-300/50">/skills ⧉</button>
+      </div>
+      <a href="faq.html" class="mt-5 inline-flex rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-bold hover:bg-white/10">FAQ & Commands entdecken ↗</a>
+    </div>
+    <div class="rounded-2xl overflow-hidden ring-1 ring-white/15 relative min-h-[240px]">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=1000&auto=format&fit=crop" alt="Abenteuer" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060d18]/90 to-transparent"></div>
+      <div class="absolute bottom-3 left-3 right-3 glass rounded-xl px-4 py-3 text-xs">Tipp: Mit <b>Tab</b> Befehle & Namen vervollständigen.</div>
+    </div>
+  </section>
+
+  <!-- DISCORD -->
+  <section class="mt-8 rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 reveal relative overflow-hidden" style="background:linear-gradient(120deg,rgba(24,59,89,.85),rgba(20,34,55,.85));border:1px solid rgba(100,219,233,.3);backdrop-filter:blur(18px)">
+    <div class="flex-1"><span class="chip">DIE COMMUNITY GEHT WEITER</span><h2 class="font-display text-2xl sm:text-3xl font-bold mt-3">Wir sehen uns im Discord.</h2><p class="text-sm text-cyan-100/80 mt-1">Gespräche, Neuigkeiten und Austausch zwischen deinen Spielsessions.</p></div>
+    <a href="https://discord.gg/yKjJM9BV9u" target="_blank" rel="noopener" class="rounded-xl bg-cyan-400 text-[#06222b] font-bold px-6 py-3.5 text-sm btn-glow hover:brightness-110 shrink-0">Discord beitreten ↗</a>
+  </section>
+
+  <!-- RULES preview -->
+  <section class="mt-12">
+    <div class="reveal"><span class="chip">FAIR PLAY STARTET MIT UNS ALLEN</span><h2 class="font-display text-3xl font-bold tracking-tight mt-3">Unsere <span class="text-cyan-300">Regeln.</span></h2><p class="text-sm text-slate-400 mt-2 max-w-2xl">Stand: 22. September 2026 · Hinter jedem Spielernamen steckt ein Mensch. Behandle andere so, dass sie gerne wiederkommen.</p></div>
+    <div class="grid md:grid-cols-2 gap-4 mt-6">
+      <details class="glass rounded-2xl p-5 reveal"><summary class="flex gap-4 cursor-pointer list-none"><span class="font-mono text-cyan-300 text-sm">01</span><b>Respekt und persönliche Grenzen</b><span class="acc-icon ml-auto text-cyan-300 text-xl leading-none">+</span></summary><p class="text-sm text-slate-300/80 mt-3">Keine Beleidigungen, Mobbing, Drohungen oder menschenfeindliche Äußerungen – auch nicht auf Schildern, Skins oder Bauwerken. „War nur Spaß“ hebt Grenzen nicht auf.</p></details>
+      <details class="glass rounded-2xl p-5 reveal"><summary class="flex gap-4 cursor-pointer list-none"><span class="font-mono text-cyan-300 text-sm">02</span><b>Fair spielen – ohne Cheats</b><span class="acc-icon ml-auto text-cyan-300 text-xl leading-none">+</span></summary><p class="text-sm text-slate-300/80 mt-3">Cheatclients, X-Ray, Kill-Aura, Fly/Speed-Hacks, Autoclicker und Bots sind verboten. Unsichere Mods vorher im Support klären.</p></details>
+      <details class="glass rounded-2xl p-5 reveal"><summary class="flex gap-4 cursor-pointer list-none"><span class="font-mono text-cyan-300 text-sm">03</span><b>Bauwerke & Grundstücke achten</b><span class="acc-icon ml-auto text-cyan-300 text-xl leading-none">+</span></summary><p class="text-sm text-slate-300/80 mt-3">Fremde Builds, Kisten, Tiere und Fahrzeuge nicht anfassen ohne Zustimmung. Ungesicherte Kisten sind keine Freigabe.</p></details>
+      <details class="glass rounded-2xl p-5 reveal"><summary class="flex gap-4 cursor-pointer list-none"><span class="font-mono text-cyan-300 text-sm">04–10</span><b>PvP, Bugs, Chat, Konten & Maßnahmen</b><span class="acc-icon ml-auto text-cyan-300 text-xl leading-none">+</span></summary><p class="text-sm text-slate-300/80 mt-3">PvP nur mit Zustimmung, Bugs melden statt ausnutzen, kein Spam, keine privaten Daten, Support sachlich nutzen. Folgen: Hinweis bis Bann – zweite Chancen via Entbannungsantrag.</p><a href="regeln.html" class="text-cyan-300 text-sm font-bold mt-2 inline-block">Alle 10 Regeln lesen →</a></details>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-white/10 bg-black/20 backdrop-blur-xl">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-6 md:grid-cols-[1fr_2fr]">
+    <a href="index.html" class="flex items-center gap-3"><img src="assets/logo.png" class="w-10 h-10 rounded-xl" alt=""><span class="font-display font-bold">CREATOR <span class="text-cyan-300">WAVE</span><small class="block text-[9px] tracking-[.25em] text-slate-400">GEMEINSAM. FAIR. KREATIV.</small></span></a>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-300">
+      <a href="regeln.html" class="hover:text-cyan-300">Regeln</a><a href="support.html" class="hover:text-cyan-300">Kontakt & Support</a><a href="appeal.html" class="hover:text-cyan-300">Entbannung</a><a href="news.html" class="hover:text-cyan-300">News & Community</a><a href="faq.html" class="hover:text-cyan-300">FAQ</a><a href="impressum.html" class="hover:text-cyan-300">Impressum</a><a href="datenschutz.html" class="hover:text-cyan-300">Datenschutz</a>
+    </nav>
+  </div>
+  <p class="text-center text-[11px] text-slate-500 pb-6">Ein unabhängiges Community-Projekt. Nicht mit Mojang oder Microsoft verbunden.</p>
+</footer>
+
+<!-- Ticket Schnell-Dialog (Original: Support-Formular) -->
+<dialog id="ticketDialog" class="w-[min(560px,92vw)]">
+  <div class="glass-strong rounded-3xl p-6 sm:p-8 text-slate-100">
+    <div class="flex items-start justify-between gap-4"><div><span class="chip">SUPPORT · SCHNELL-DIALOG</span><h3 class="font-display font-bold text-2xl mt-2">Neues Ticket</h3><p class="text-sm text-slate-400">Original-Formular findest du auf der Support-Seite.</p></div><button data-close="ticketDialog" class="w-9 h-9 rounded-xl border border-white/15 bg-white/5">×</button></div>
+    <form id="ticketCreate" class="mt-5 grid gap-3">
+      <label class="text-xs font-semibold">Minecraft-Name<input name="name" required pattern="[A-Za-z0-9_]{1,16}" maxlength="16" placeholder="Dein Spielername" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <label class="text-xs font-semibold">Kategorie<select name="category" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"><option value="question">Allgemeine Frage</option><option value="technical">Technisches Problem</option><option value="report">Spieler / Vorfall melden</option><option value="other">Sonstiges</option></select></label>
+        <label class="text-xs font-semibold">Betreff<input name="subject" required minlength="5" maxlength="100" placeholder="Worum geht es?" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></label>
+      </div>
+      <label class="text-xs font-semibold">Nachricht<textarea name="message" required minlength="20" maxlength="3000" rows="4" placeholder="Zeitpunkt, Fehlermeldung, Schritte davor …" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea></label>
+      <label class="hidden">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+      <button class="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm hover:brightness-110">Ticket absenden ↗</button>
+      <p class="error text-rose-300 text-xs"></p>
+    </form>
+    <div id="receipt" hidden class="mt-4 rounded-xl border border-cyan-300/30 bg-cyan-400/10 p-4 text-sm"></div>
+    <div id="ticketThread" hidden></div><div id="messages" class="hidden"></div>
+    <form id="ticketReply" class="hidden"><textarea name="message"></textarea></form>
+    <p class="text-[11px] text-slate-500 mt-3">Demo-Modus: speichert lokal. <a href="support.html" class="text-cyan-300 font-bold">Zur vollen Support-Seite →</a></p>
+  </div>
+</dialog>
+
+<!-- KI floating (Original: /ki Dialog) -->
+<button data-open="kiDialog" class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full pl-2 pr-5 py-2 glass-strong !border-cyan-300/40 hover:scale-105 transition" aria-label="KI-Assistent öffnen">
+  <span class="w-9 h-9 rounded-full grid place-items-center bg-gradient-to-br from-cyan-300 to-violet-500 text-[#06222b] font-bold">✦</span>
+  <span class="text-sm font-bold">Frag die KI</span>
+</button>
+<dialog id="kiDialog" class="w-[min(440px,92vw)]">
+  <div class="glass-strong rounded-3xl overflow-hidden">
+    <div class="flex items-center justify-between px-5 py-4 border-b border-white/10"><b class="text-sm">CreatorWave · KI-Assistent</b><button data-close="kiDialog" class="w-8 h-8 rounded-lg border border-white/15">×</button></div>
+    <div id="cw-ai-body" class="p-4 max-h-[50vh] overflow-auto"><p class="rounded-xl px-3 py-2 text-sm bg-white/5 border border-white/10 mr-8 mb-2">Hallo! Ich bin der CreatorWave-Assistent. Frag z.B. nach Join, Commands, Regeln oder Support.</p></div>
+    <form id="cw-ai-form" class="p-4 border-t border-white/10"><label for="cw-ai-question" class="text-xs font-bold text-slate-400">DEINE FRAGE</label><textarea id="cw-ai-question" required maxlength="800" rows="2" placeholder="Was möchtest du wissen?" class="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm"></textarea><span id="cw-ai-status" class="text-xs text-cyan-200"></span><div class="flex gap-2 mt-2"><button class="flex-1 rounded-xl bg-cyan-400 text-[#06222b] font-bold py-2.5 text-sm">Senden</button><a href="faq.html" class="rounded-xl border border-white/20 px-4 py-2.5 text-sm font-bold">FAQ</a></div><p class="text-[10px] text-slate-500 mt-2">KI kann Fehler machen. Keine Passwörter / Ticketcodes eingeben.</p></form>
+  </div>
+</dialog>
+
+<div id="toast" role="status" class="fixed bottom-6 left-1/2 -translate-x-1/2 translate-y-24 opacity-0 z-[60] glass-strong rounded-full px-5 py-2.5 text-sm font-semibold"></div>
+
+<script>
+// mirror status to second strip
+const _origLoad = loadServerStatus;
+loadServerStatus = async function(){
+  await _origLoad();
+  const a=document.getElementById('serverState'),b=document.getElementById('serverState2');
+  const c=document.getElementById('onlineCount'),d=document.getElementById('onlineCount2');
+  if(a&&b) b.textContent=a.textContent, b.className=a.className+' block text-lg mt-1';
+  if(c&&d) d.textContent=c.textContent;
+};
+</script>
+</body>
+</html>
