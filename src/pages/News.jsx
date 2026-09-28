@@ -68,7 +68,7 @@ export default function News() {
                 Bauprojekte, Updates und Geschichten vom Server – mit Bildern und Platz für Kommentare. Kommentare erscheinen nach Team-Freigabe.
               </p>
             </div>
-            <button onClick={() => setNewOpen(true)} className="rounded-xl bg-cyan-400 text-[#06222b] text-xs font-bold px-4 py-2.5 hover:brightness-110">
+            <button onClick={() => setNewOpen(true)} className="rounded-xl bg-cyan-300 text-[#06222b] text-xs font-bold px-4 py-2.5 hover:brightness-110">
               + Beitrag
             </button>
           </div>
@@ -95,14 +95,14 @@ export default function News() {
           <article key={p.id} className="glass glass-hover rounded-2xl overflow-hidden flex flex-col reveal visible">
             <div className="relative h-48 overflow-hidden">
               <img src={p.img} alt="" loading="lazy" className="w-full h-full object-cover hover:scale-105 transition duration-700" />
-              <span className="absolute top-3 left-3 chip !py-1 !px-3">{p.tag}</span>
+              <span className="absolute top-3 left-3 tag">{p.tag}</span>
             </div>
             <div className="p-5 flex flex-col flex-1">
               <span className="text-[11px] tracking-widest text-cyan-200/70 font-bold">{p.date} · TEAM</span>
               <h3 className="font-display font-bold text-lg mt-1 mb-2">{p.title}</h3>
               <p className="text-sm text-slate-300/90 line-clamp-3 flex-1">{p.text}</p>
               <div className="flex gap-2 mt-4">
-                <button onClick={() => openPost(p)} className="flex-1 rounded-xl bg-cyan-400 text-[#06222b] font-bold text-sm py-2.5 hover:brightness-110">
+                <button onClick={() => openPost(p)} className="flex-1 rounded-xl bg-cyan-300 text-[#06222b] font-bold text-sm py-2.5 hover:brightness-110">
                   Lesen & Kommentare
                 </button>
               </div>
@@ -124,7 +124,7 @@ export default function News() {
         <div className="glass rounded-2xl p-6">
           <h2 className="font-display font-bold text-xl">Problem melden?</h2>
           <p className="text-sm text-slate-400 mt-2">Persönliches gehört ins private Ticket – nenne Beitrag + Kommentar.</p>
-          <Link to="/support" className="mt-3 inline-block rounded-xl bg-cyan-400 text-[#06222b] text-sm font-bold px-4 py-2">
+          <Link to="/support" className="mt-3 inline-block rounded-xl bg-cyan-300 text-[#06222b] text-sm font-bold px-4 py-2">
             Support öffnen →
           </Link>
         </div>
@@ -173,7 +173,7 @@ export default function News() {
                   <input name="code" placeholder="Löschcode merken (optional)" className="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm" />
                 </div>
                 <textarea name="text" required minLength={2} maxLength={500} rows={2} placeholder="Dein Kommentar …" className="bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm" />
-                <button className="rounded-xl bg-cyan-400 text-[#06222b] font-bold text-sm py-2.5">Kommentar senden (mit Freigabe)</button>
+                <button className="rounded-xl bg-cyan-300 text-[#06222b] font-bold text-sm py-2.5">Kommentar senden (mit Freigabe)</button>
                 {hint && <p className="text-xs text-cyan-200">{hint}</p>}
               </form>
             </div>
@@ -208,7 +208,7 @@ export default function News() {
             </label>
             <p className="text-[11px] text-slate-500">Teile nur Bilder, die du veröffentlichen darfst. Demo speichert lokal.</p>
             <div className="flex gap-2">
-              <button className="flex-1 rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm">Veröffentlichen</button>
+              <button className="flex-1 rounded-xl bg-cyan-300 text-[#06222b] font-bold py-3 text-sm">Veröffentlichen</button>
               <button type="button" onClick={() => setNewOpen(false)} className="rounded-xl border border-white/20 px-5 py-3 text-sm font-bold">
                 Abbrechen
               </button>

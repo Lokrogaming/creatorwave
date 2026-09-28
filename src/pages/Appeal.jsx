@@ -46,9 +46,9 @@ export default function Appeal() {
             Deine Erklärung
             <textarea name="text" required minLength={30} maxLength={3000} rows={6} className="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm" placeholder="Was ist passiert? Was hast du verstanden? Warum sollte es weitergehen?" />
           </label>
-          <button className="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm">Antrag absenden ↗</button>
+          <button className="rounded-xl bg-cyan-300 text-[#06222b] font-bold py-3 text-sm">Antrag absenden ↗</button>
           {receipt && (
-            <div className="rounded-xl border border-cyan-300/30 bg-cyan-400/10 p-4 text-sm">
+            <div className="rounded-xl border border-cyan-300/30 bg-cyan-300/10 p-4 text-sm">
               Antrag gespeichert (Demo). Dein Statuscode: <code className="bg-black/40 px-2 py-1 rounded">{receipt}</code> – sichere ihn!
             </div>
           )}

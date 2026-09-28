@@ -27,7 +27,7 @@ export default function Regeln() {
         <aside className="glass rounded-2xl p-6 lg:sticky lg:top-24">
           <strong className="font-display">Einfach fair bleiben.</strong>
           <p className="text-sm text-slate-400 mt-2">Hinter jedem Spielernamen steckt ein Mensch. Behandle andere so, dass sie gerne wiederkommen.</p>
-          <Link to="/support" className="block mt-4 rounded-xl bg-cyan-400 text-[#06222b] text-sm font-bold px-4 py-2.5 text-center">
+          <Link to="/support" className="block mt-4 rounded-xl bg-cyan-300 text-[#06222b] text-sm font-bold px-4 py-2.5 text-center">
             Vorfall melden ↗
           </Link>
           <Link to="/appeal" className="block mt-2 rounded-xl border border-white/20 text-sm font-bold px-4 py-2.5 text-center hover:bg-white/10">

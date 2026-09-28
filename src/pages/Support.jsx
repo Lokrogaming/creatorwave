@@ -96,7 +96,7 @@ export default function Support() {
               <p className="text-[11px] text-slate-500">
                 Verarbeitung siehe <Link to="/datenschutz" className="text-cyan-300">Datenschutz</Link>. Keine Passwörter! Name ist nicht verifiziert.
               </p>
-              <button className="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm hover:brightness-110">Ticket absenden ↗</button>
+              <button className="rounded-xl bg-cyan-300 text-[#06222b] font-bold py-3 text-sm hover:brightness-110">Ticket absenden ↗</button>
             </form>
           ) : (
             <form onSubmit={submitAccess} className="grid gap-3">
@@ -105,11 +105,11 @@ export default function Support() {
                 <input name="token" required placeholder="Code aus Bestätigung" className="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm font-mono" />
               </label>
               <p className="text-[11px] text-slate-500">Wer den Code kennt, kann lesen & antworten. Nicht öffentlich teilen.</p>
-              <button className="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-3 text-sm">Ticket öffnen ↗</button>
+              <button className="rounded-xl bg-cyan-300 text-[#06222b] font-bold py-3 text-sm">Ticket öffnen ↗</button>
             </form>
           )}
           {receipt && (
-            <div className="mt-4 rounded-xl border border-cyan-300/30 bg-cyan-400/10 p-4 text-sm">
+            <div className="mt-4 rounded-xl border border-cyan-300/30 bg-cyan-300/10 p-4 text-sm">
               <b>Ticket erstellt (Demo-Modus).</b>
               <br />
               Dein privater Code: <code className="bg-black/40 px-2 py-1 rounded">{receipt}</code>
@@ -170,7 +170,7 @@ export default function Support() {
               Deine Antwort
               <textarea name="message" required minLength={3} maxLength={3000} rows={3} className="mt-1 w-full bg-black/30 border border-white/15 rounded-xl px-3 py-2.5 text-sm" />
             </label>
-            <button className="rounded-xl bg-cyan-400 text-[#06222b] font-bold py-2.5 text-sm">Antwort senden ↗</button>
+            <button className="rounded-xl bg-cyan-300 text-[#06222b] font-bold py-2.5 text-sm">Antwort senden ↗</button>
           </form>
           <p className="text-[11px] text-slate-500 mt-2">Geschlossen? Dann oben ein neues Ticket erstellen.</p>
         </section>
